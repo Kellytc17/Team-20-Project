@@ -4,4 +4,4 @@
 ## Team Members
 > Team Member #1 Kelly Clark
 
-> Team Member #2 name
+> Team Member #2 Ulises Martinez Zuniga
