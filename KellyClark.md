@@ -1,0 +1,7 @@
+# Kelly Clark
+
+## About Me
+Hi, I'm Kelly and I'm currently in my last year at UNCG majoring in Computer Science. I'm excited to finish this chapter of my life and hopefully continue my education by pursing a master's degree in Computer Sceince. I've always been interested in technology and learning how things work but what spark my interested was video games. I always wanted to know how video games were made but also the process and journey developers went through creating them. Outside of school I'm pretty laid back person who enjoys hanging out playing games with friends, spending time with family, and just enjoying my free time. I wouldn't say there's anything particularly interesting about me but I'm looking forward to seeing where life takes me after graduation and what my next chapter has in store.
+
+### My CSC340 Goals
+My goal for this course is to gain knowledge and skills that will help me in the future as I pursue my second bachelor's degree in Software Engineering. Since I am currently majoring in Computer Science I hope this course will build on what I have already learned and give me a better understanding of software development and engineering. I also hope that what I learn in this course will give me an advantage when I begin my Software Engineering degree in the future. 
