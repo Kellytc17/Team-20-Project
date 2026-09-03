@@ -7,7 +7,7 @@
 > Team Member #2 Ulises Martinez Zuniga
 
 ## Description 
-MicroCourse is an educational platform designed to make learning new skills and gaining knowledge more accessible and flexible. The app allows learners to discover and enroll in short courses and workshops offered by instructors and subject-matter experts. Learners can choose between self-paced courses that allow them to learn on their own schedule or chort-based courses where they learn alongside other learners during a set time-frame. 
+MicroCourse is an educational platform designed to make learning new skills and gaining knowledge more accessible and flexible. The app allows learners to discover and enroll in short courses and workshops offered by instructors and subject-matter experts. Learners can choose between self-paced courses that allow them to learn on their own schedule or cohort-based courses where they learn alongside other learners during a set time-frame. 
 
 ## App Functions 
 
