@@ -1,34 +1,37 @@
 
 # Requirements – Starter Template
 
-**Project Name:** Your App Name \
-**Team:** Names and roles \
+**Project Name:** MicroCourse \
+**Team:** Kelly Clark - Provider, Ulises Martinez Zuniga - Customer  \
 **Course:** CSC 340\
 **Version:** 1.0\
-**Date:** 2026-08-25
+**Date:** 2026-09-18
 
 ---
 
 ## 1. Overview
-**Vision.** One or two sentences: who this is for, the core problem, and the outcome.
+**Vision.** MicroCourse is a platform for studenst and professionals who want to explore short and local courses provided by experts in multiple fields. The system simplifies learning by providing structured and concise course material that is easy to follow. 
 
 **Glossary** Terms used in the project
-- **Term 1:** description.
-- **Term 2:** description
+- **Learner:** A student who searches and enrolls in courses. 
+- **Instructor:** An expert who creates, publishes, and manages courses for learners. 
+- **Course:** A short structured learning experience created and provided by an instructor.
+- **Course Cohort:** A group of learners enrolled in the same course.
 
 **Primary Users / Roles.**
-- **Customer (e.g., Student/Patient/Pet Owner/etc. )** — 1 line goal statement.
-- **Provider (e.g., Teacher/Doctor/Pet Sitter/etc. )** — 1 line goal statement.
-- **SysAdmin (optional)** — 1 line goal statement.
+- **Learner** — Find and enroll in short courses that provide structured and easy to follow learning material.
+- **Instructor** — Create, publish, and manage courses to provide learning.
 
 **Scope (this semester).**
-- <capability 1>
-- <capability 2>
-- <capability 3>
+- User profiles (learners and instructors)
+- Search and browse courses by instructors and keywords
+- Reviews, ratings, and comments
+- Course progression tracking 
+- Adding courses to a customer's profile
 
 **Out of scope (deferred).**
-- <deferred 1>
-- <deferred 2>
+- E-commerce and payment functionality 
+- Direct in-app communication between learners and instructors
 
 > This document is **requirements‑level** and solution‑neutral; design decisions (UI layouts, API endpoints, schemas) are documented separately.
 
@@ -59,59 +62,70 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 ### 2.2 Provider Stories
-- **US-20 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-5 — Create Instructor Profile**  
+  _Story:_ As an instuctor, I want to create a profile so that I can attract users to my courses. 
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Create an instructor profile
+    Given I am an instructor without a profile
+    When  I provide my instrutcor information and submit the profile 
+    Then  My instructor profile should be created and visible to custormers
   ```
 
-- **US-21 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-6 — Publish Courses**  
+  _Story:_ As an instructor, I want to publish my courses so that customers can understand what I offer and the pricing.  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Publish a course
+    Given I am logged in as an instructor
+    When  I provide the course information and pricing and publish the  course
+    Then  The course should be available for customers to view
   ```
 
-### 2.3 SysAdmin Stories
-- **US‑30 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
+  **US-7 — Manage Reviews**  
+  _Story:_ As an instructor, I want to view and manage reviews so that I can engage with customers.  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Manage course reviews
+    Given I am logged in as an instructor
+    When  I access the reviews for one of my courses 
+    Then  I should be able to view the reviews and respond to them 
   ```
 
-- **US‑31 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
+  **US-8 — Manage Courses**  
+  _Story:_ As an instructor, I want to manage my courses so that customers can have the most relevant information.  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Update course information
+    Given I am logged in as an instructor
+    When  I update information for one of my courses
+    Then  The updated course information should be visible to customers
   ```
 
+**US-9 — Manage Enrolled Learners**  
+  _Story:_ As an instructor, I want to manage enrolled learners so that I can manage my course cohorts.  
+  _Acceptance:_
+  ```gherkin
+  Scenario: Manage enrolled learners
+    Given I am logged in as an instructor and learners are enrolled in my course
+    When  I view the enrolled learners
+    Then  I should be able to view and manage the learners in my course cohort
+  ```
 ---
 
 ## 3. Non‑Functional Requirements (make them measurable)
-- **Performance:** description 
-- **Availability/Reliability:** description
-- **Security/Privacy:** description
-- **Usability:** description
+- **Performance:** Course search and browsing results should be displayed within 2 seconds under normal system usage.
+- **Availability/Reliability:** The system should remain available during normal usage and should save user, course, enrollment, and progress information without unexpected loss.
+- **Security/Privacy:** Users must authenticate before accessing their profiles and personal course information. User information should only be accessible to authorized users.
+- **Usability:** A new customer should be able to create a profile and find a course using the search or browse features without external assistance.
 
 ---
 
 ## 4. Assumptions, Constraints, and Policies
-- list any rules, policies, assumptions, etc.
+- Users are expected to have access to a modern web browser and a stable internet connection.
+- Customers and instructors are expected to provide accurate information in their profiles and course content.
+- The project must be completed within the CSC 340 course timeline and project requirements.
+- E-commerce and direct in-app communication between customers and instructors are outside the scope of the current project.
 
 ---
 
