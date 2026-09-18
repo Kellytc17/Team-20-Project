@@ -46,13 +46,33 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   _Acceptance:_
   ```gherkin
   Scenario: <happy path>
+    Given I am a user without a profile 
+    When  
+    Then  <observable outcome>
+  ```
+
+- **US‑2 — <short title>**  
+  _Story:_ As a customer, I want to write a review so that other users can view it and benefit  
+  _Acceptance:_
+  ```gherkin
+  Scenario: <happy path>
     Given <preconditions>
     When  <action>
     Then  <observable outcome>
   ```
 
-- **US‑2 — <short title>**  
-  _Story:_ As a customer, I want … so that …  
+  - **US‑3 — <short title>**  
+  _Story:_ As a customer, I want to be able to filter through courses so that I can find courses tailored to my interests   
+  _Acceptance:_
+  ```gherkin
+  Scenario: <happy path>
+    Given <preconditions>
+    When  <action>
+    Then  <observable outcome>
+  ```
+
+  - **US‑4 — <short title>**  
+  _Story:_ As a customer, I want to enroll in courses so that I can expand my knowledge
   _Acceptance:_
   ```gherkin
   Scenario: <happy path>
@@ -62,7 +82,25 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 ### 2.2 Provider Stories
+- **US-5 — Create Instructor Profile**  
+  _Story:_ As an instuctor, I want to create a profile so that I can attract users to my courses. 
+  _Acceptance:_
+  ```gherkin
+  Scenario: Create an instructor profile
+    Given I am an instructor without a profile
+    When  I provide my instrutcor information and submit the profile 
+    Then  My instructor profile should be created and visible to custormers
+  ```
 
+  - **US-5 — Create Instructor Profile**  
+  _Story:_ As an instuctor, I want to create a profile so that I can attract users to my courses. 
+  _Acceptance:_
+  ```gherkin
+  Scenario: Create an instructor profile
+    Given I am an instructor without a profile
+    When  I provide my instrutcor information and submit the profile 
+    Then  My instructor profile should be created and visible to custormers
+  ```
 - **US-5 — Create Instructor Profile**  
   _Story:_ As an instuctor, I want to create a profile so that I can attract users to my courses. 
   _Acceptance:_
