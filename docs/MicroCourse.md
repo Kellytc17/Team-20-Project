@@ -42,7 +42,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
 
 ### 2.1 Customer Stories
 - **US‑1 — <short title>**  
-  _Story:_ As a customer, I want … so that …  
+  _Story:_ As a customer, I want to create a user profile, so that I can easily find and enroll in courses
   _Acceptance:_
   ```gherkin
   Scenario: <happy path>
@@ -62,6 +62,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 ### 2.2 Provider Stories
+
 - **US-5 — Create Instructor Profile**  
   _Story:_ As an instuctor, I want to create a profile so that I can attract users to my courses. 
   _Acceptance:_
