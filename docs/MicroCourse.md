@@ -41,44 +41,44 @@
 Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`.** Each story includes at least one **Given/When/Then** scenario.
 
 ### 2.1 Customer Stories
-- **US‑1 — <short title>**  
+- **US‑1 — <Sign-up & manage profile>**  
   _Story:_ As a customer, I want to create a user profile, so that I can easily find and enroll in courses
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
+  Scenario: Sign-up and input information
     Given I am a user without a profile 
-    When  
-    Then  <observable outcome>
+    When  I provide vaid sign-up details
+    Then  I should be successfully registered and logged in
   ```
 
-- **US‑2 — <short title>**  
+- **US‑2 — <Write a review after a course>**  
   _Story:_ As a customer, I want to write a review so that other users can view it and benefit  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Write a review after a course
+    Given I have completed a registered course 
+    When  I submit a review for that course 
+    Then  The review should be saved and visible to other customers
   ```
 
   - **US‑3 — <short title>**  
   _Story:_ As a customer, I want to be able to filter through courses so that I can find courses tailored to my interests   
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: I am searching for a course 
+    Given I select the filter tab
+    When  I apply the filters 
+    Then  I will see tailored courses based on my preferences 
   ```
 
-  - **US‑4 — <short title>**  
+  - **US‑4 — <Enroll in a course>**  
   _Story:_ As a customer, I want to enroll in courses so that I can expand my knowledge
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: I am logged into my user profile
+    Given I select the course I want from the course catalog
+    When  I click 'enroll' 
+    Then  I will be able to see the course material 
   ```
 
 ### 2.2 Provider Stories
