@@ -45,7 +45,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="Instructors.html">
                             Instructors
                         </a>
                     </li>
@@ -389,7 +389,7 @@
                     share their knowledge and expertise.
                 </p>
 
-                <a href="#" class="btn btn-primary" onclick="goToInstructorPage()">
+                <a href="Instructors.html" class="btn btn-primary" onclick="goToInstructorPage()">
                     Explore Instructors
                 
                 </a>
@@ -498,12 +498,12 @@
                     Home
                 </a>
 
-                <a href="provider/provider.html"
+                <a href="Instructors.html"
                    class="text-white text-decoration-none me-3">
                     Instructors
                 </a>
 
-                <a href="customer/customer.html"
+                <a href="#"
                    class="text-white text-decoration-none">
                     Learners
                 </a>
@@ -524,27 +524,6 @@
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
-
-<script>
-    function goToInstructorDashboard() {
-        if (localStorage.getItem("instructorLoggedIn") === "true") {
-            window.location.href = "provider/provider.html";
-        } else {
-            window.location.href = "Login/Instructor-login.html";
-        }
-    
-    }
-
-    function goToLearnerDashboard() {
-        if (localStorage.getItem("learnerLoggedIn") === "true") {
-            window.location.href = "#";
-        } else {
-            window.location.href = "Login/Learner-login.html";
-        }
-    }
-
- 
-</script>
 
 </body>
 </html>
