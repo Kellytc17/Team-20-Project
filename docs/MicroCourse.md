@@ -92,25 +92,6 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  My instructor profile should be created and visible to custormers
   ```
 
-  - **US-5 — Create Instructor Profile**  
-  _Story:_ As an instuctor, I want to create a profile so that I can attract users to my courses. 
-  _Acceptance:_
-  ```gherkin
-  Scenario: Create an instructor profile
-    Given I am an instructor without a profile
-    When  I provide my instrutcor information and submit the profile 
-    Then  My instructor profile should be created and visible to custormers
-  ```
-- **US-5 — Create Instructor Profile**  
-  _Story:_ As an instuctor, I want to create a profile so that I can attract users to my courses. 
-  _Acceptance:_
-  ```gherkin
-  Scenario: Create an instructor profile
-    Given I am an instructor without a profile
-    When  I provide my instrutcor information and submit the profile 
-    Then  My instructor profile should be created and visible to custormers
-  ```
-
 - **US-6 — Publish Courses**  
   _Story:_ As an instructor, I want to publish my courses so that customers can understand what I offer and the pricing.  
   _Acceptance:_
