@@ -1,4 +1,3 @@
-
 package com.example.MicroCourse.provider.repository;
 
 import com.example.MicroCourse.provider.entity.Instructor;

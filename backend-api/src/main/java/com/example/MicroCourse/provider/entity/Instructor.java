@@ -1,4 +1,3 @@
-
 package com.example.MicroCourse.provider.entity;
 
 import jakarta.persistence.Entity;
