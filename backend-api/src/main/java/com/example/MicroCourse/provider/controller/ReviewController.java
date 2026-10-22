@@ -53,7 +53,7 @@ public class ReviewController {
         return reviewService.updateReview(id, review);
     }
 
-    @PatchMapping("/{id}/reply")
+    @PutMapping("/{id}/reply")
     public Review replyToReview(
             @PathVariable Long id,
             @RequestBody Map<String, String> request) {
