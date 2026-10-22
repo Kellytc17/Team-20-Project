@@ -1,4 +1,3 @@
-
 package com.example.MicroCourse.provider.service;
 
 import com.example.MicroCourse.provider.entity.Course;
