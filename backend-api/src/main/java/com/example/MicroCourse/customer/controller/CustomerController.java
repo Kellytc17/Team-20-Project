@@ -1,33 +1,35 @@
 package com.example.MicroCourse.customer.controller;
 
-//import java.util.List;
+import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
 import com.example.MicroCourse.customer.entity.Customer;
 import com.example.MicroCourse.customer.service.CustomerService;
-//import com.example.MicroCourse.provider.entity.CourseEnrollment;
-//import com.example.MicroCourse.provider.service.CourseEnrollmentService;
-//import com.example.MicroCourse.provider.entity.Review;
-//import com.example.MicroCourse.provider.service.CourseEnrollmentService;
-//import com.example.MicroCourse.provider.service.ReviewService;
+import com.example.MicroCourse.provider.entity.CourseEnrollment;
+import com.example.MicroCourse.provider.service.CourseEnrollmentService;
+import com.example.MicroCourse.provider.entity.Review;
+import com.example.MicroCourse.provider.service.CourseEnrollmentService;
+import com.example.MicroCourse.provider.service.ReviewService;
+import com.example.MicroCourse.provider.entity.CourseEnrollment;
+import com.example.MicroCourse.provider.entity.Review;
+import com.example.MicroCourse.provider.service.CourseEnrollmentService;
+import com.example.MicroCourse.provider.service.ReviewService;
 
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
 
     private final CustomerService customerService;
-    // private final CourseEnrollmentService courseEnrollmentService;
-    // private final ReviewService reviewService;
+    private final CourseEnrollmentService courseEnrollmentService;
+    private final ReviewService reviewService;
 
-    public CustomerController(
-            CustomerService customerService) {
-            //     CourseEnrollmentService courseEnrollmentService,
-            // ReviewService reviewService
-
+    public CustomerController( CustomerService customerService,  CourseEnrollmentService courseEnrollmentService,
+            ReviewService reviewService) {
+            
         this.customerService = customerService;
-        // this.courseEnrollmentService = courseEnrollmentService;
-        // this.reviewService = reviewService;
+        this.courseEnrollmentService = courseEnrollmentService;
+        this.reviewService = reviewService;
     }
 
     @PostMapping
@@ -73,18 +75,18 @@ public class CustomerController {
         customerService.deleteCustomer(id);
     }
 
-    // @GetMapping("/{customerId}/reviews")
-    // public List<Review> getCustomerReviews(
-    //         @PathVariable Long customerId) {
+    @GetMapping("/{customerId}/reviews")
+    public List<Review> getCustomerReviews(
+            @PathVariable Long customerId) {
 
-    //     return reviewService.getReviewsByCustomer(customerId);
-    // }
+        return reviewService.getReviewsByCustomer(customerId);
+    }
 
-    // @GetMapping("/{customerId}/enrollments")
-    // public List<CourseEnrollment> getCustomerEnrollments(
-    //         @PathVariable Long customerId) {
+    @GetMapping("/{customerId}/enrollments")
+    public List<CourseEnrollment> getCustomerEnrollments(
+            @PathVariable Long customerId) {
 
-    //     return courseEnrollmentService
-    //             .getEnrollmentsByCustomer(customerId);
-    // }
+        return courseEnrollmentService
+                .getEnrollmentsByCustomer(customerId);
+    }
 }
