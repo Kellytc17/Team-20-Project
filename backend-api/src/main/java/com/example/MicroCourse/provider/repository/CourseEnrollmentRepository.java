@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CourseEnrollmentRepository extends JpaRepository<CourseEnrollment, Long> {
 
-    List<CourseEnrollment> findByCustomerId(Long customerId);
+    List<CourseEnrollment> findByCustomer_Id(Long customerId);
 
     List<CourseEnrollment> findByCourse_Id(Long courseId);
 }

@@ -5,6 +5,9 @@ import com.example.MicroCourse.provider.entity.CourseEnrollment;
 import com.example.MicroCourse.provider.repository.CourseEnrollmentRepository;
 import com.example.MicroCourse.provider.repository.CourseRepository;
 import org.springframework.stereotype.Service;
+import com.example.MicroCourse.customer.entity.Customer;
+import com.example.MicroCourse.customer.repository.CustomerRepository;
+
 
 import java.util.List;
 
@@ -13,15 +16,31 @@ public class CourseEnrollmentService {
 
     private final CourseEnrollmentRepository enrollmentRepository;
     private final CourseRepository courseRepository;
+    private final CustomerRepository customerRepository;
 
     public CourseEnrollmentService(
             CourseEnrollmentRepository enrollmentRepository,
-            CourseRepository courseRepository) {
+            CourseRepository courseRepository,
+            CustomerRepository customerRepository) {
         this.enrollmentRepository = enrollmentRepository;
         this.courseRepository = courseRepository;
+        this.customerRepository = customerRepository;
     }
 
     public CourseEnrollment createEnrollment(CourseEnrollment enrollment) {
+        if (enrollment.getCustomer() == null
+                || enrollment.getCustomer().getId() == null) {
+            throw new IllegalArgumentException("A customer ID is required.");
+        }
+
+        Long customerId = enrollment.getCustomer().getId();
+
+        Customer customer = customerRepository.findById(customerId)
+                .orElseThrow(() ->
+                        new RuntimeException("Customer not found: " + customerId));
+
+        enrollment.setCustomer(customer);
+         
         if (enrollment.getCourse() == null
                 || enrollment.getCourse().getId() == null) {
             throw new IllegalArgumentException("A course ID is required.");
@@ -34,6 +53,7 @@ public class CourseEnrollmentService {
                         new RuntimeException("Course not found: " + courseId));
 
         enrollment.setCourse(course);
+
         return enrollmentRepository.save(enrollment);
     }
 
@@ -52,7 +72,7 @@ public class CourseEnrollmentService {
     }
 
     public List<CourseEnrollment> getEnrollmentsByCustomer(Long customerId) {
-        return enrollmentRepository.findByCustomerId(customerId);
+        return enrollmentRepository.findByCustomer_Id(customerId);
     }
 
     public CourseEnrollment updateEnrollment(
@@ -61,7 +81,18 @@ public class CourseEnrollmentService {
         CourseEnrollment existing = getEnrollmentById(id);
 
         existing.setStatus(updatedEnrollment.getStatus());
-        existing.setCustomerId(updatedEnrollment.getCustomerId());
+
+          if (updatedEnrollment.getCustomer() != null
+                && updatedEnrollment.getCustomer().getId() != null) {
+
+            Long customerId = updatedEnrollment.getCustomer().getId();
+
+            Customer customer = customerRepository.findById(customerId)
+                    .orElseThrow(() ->
+                            new RuntimeException("Customer not found: " + customerId));
+
+            existing.setCustomer(customer);
+        }
 
         if (updatedEnrollment.getCourse() != null
                 && updatedEnrollment.getCourse().getId() != null) {

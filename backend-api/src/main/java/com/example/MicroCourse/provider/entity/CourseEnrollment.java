@@ -1,5 +1,7 @@
 package com.example.MicroCourse.provider.entity;
 
+import com.example.MicroCourse.customer.entity.Customer;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -13,8 +15,9 @@ public class CourseEnrollment {
     @Column(nullable = false)
     private String status;
 
-    @Column(name = "customer_id", nullable = false)
-    private Long customerId;
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
@@ -23,9 +26,9 @@ public class CourseEnrollment {
     public CourseEnrollment() {
     }
 
-    public CourseEnrollment(String status, Long customerId, Course course) {
+    public CourseEnrollment(String status, Customer customer, Course course) {
         this.status = status;
-        this.customerId = customerId;
+        this.customer = customer;
         this.course = course;
     }
 
@@ -45,12 +48,12 @@ public class CourseEnrollment {
         this.status = status;
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Course getCourse() {
