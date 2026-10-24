@@ -2,7 +2,7 @@
 
 ## UML Class Diagram
 
-![Class Diagram](../doc/uml-class.png)
+![Class Diagram](../project%20images/MicroCourse_UML_Diagram.png)
 
 ## API Overview
 
@@ -52,6 +52,75 @@ Content-Type: application/json
   "profileDescription": "Helping people learn programming at their own pace."
 }
 ```
+## Customer Account Management
+
+| Method | Path | Purpose | Response Code | Error Codes | User Story | Implementer |
+|----------|----------|----------|----------|----------|----------|----------|
+| `POST` | `/api/customers` | Register a new customer account | `201 Created` | `400, 409, 500` | US-1 | Ulises |
+| `GET` | `/api/customers/{id}` | View a customer profile | `200 OK` | `404, 500` | US-1 | Ulises |
+| `GET` | `/api/customers/email/{email}` | Search customer by email | `200 OK` | `404, 500` | US-1 | Ulises |
+| `GET` | `/api/customers/username/{userName}` | Search customer by username | `200 OK` | `404, 500` | US-1 | Ulises |
+| `PUT` | `/api/customers/{id}` | Update customer profile | `200 OK` | `400, 404, 409, 500` | US-1 | Ulises |
+| `DELETE` | `/api/customers/{id}` | Delete customer account | `204 No Content` | `404, 500` | US-1 | Ulises |
+
+### Example Customer Registration Request
+
+```http
+POST /api/customers
+Content-Type: application/json
+
+{
+  "userName": "jdoe123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "jdoe@email.com",
+  "phoneNumber": "555-123-4567",
+  "password": "password123",
+  "interests": [
+    "Programming",
+    "Artificial Intelligence",
+    "Data Science"
+  ]
+}
+```
+### Example Customer Update Request
+
+```http
+PUT /api/customers/1
+Content-Type: application/json
+
+{
+  "userName": "jdoe123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@email.com",
+  "phoneNumber": "919-555-1234",
+  "password": "password123",
+  "interests": [
+    "Programming",
+    "Cybersecurity",
+    "Cloud Computing"
+  ]
+}
+```
+
+### Example Customer Response
+
+```json
+{
+  "id": 1,
+  "userName": "jdoe123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "jdoe@email.com",
+  "phoneNumber": "555-123-4567",
+  "interests": [
+    "Programming",
+    "Artificial Intelligence",
+    "Data Science"
+  ]
+}
+```
 
 ## Courses and learning content
 
@@ -72,6 +141,7 @@ Content-Type: application/json
 | `GET` | `/api/resources/{id}` | Read a learning resource | `200 OK` | `404, 500` | US-6/8 | Kelly |
 | `PUT` | `/api/resources/{id}` | Update a learning resource | `200 OK` | `400, 404, 500` | US-6/8 | Kelly |
 | `DELETE` | `/api/resources/{id}` | Delete a learning resource | `204 No Content` | `404, 500` | US-6/8 | Kelly |
+
 
 ### Example Course Request
 
