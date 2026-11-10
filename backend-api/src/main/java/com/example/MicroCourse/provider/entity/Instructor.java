@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Instructor {
@@ -13,6 +14,7 @@ public class Instructor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Full name is required")
     @Column(nullable = false)
     private String name;
 
