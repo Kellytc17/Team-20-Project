@@ -25,6 +25,28 @@ public class InstructorPageController {
         this.accountService = accountService;
     }
 
+    @GetMapping("/login")
+    public String showLoginPage() {
+        return "instructor-login";
+    }
+
+    @PostMapping("/login")
+    public String loginInstructor(@RequestParam String email, @RequestParam String password, Model model) {
+        try {
+            InstructorAccount account = accountService.getAccountByEmail(email);
+
+            if (!account.getPassword().equals(password)) {
+                model.addAttribute("errorMessage", "Incorrect email or password");
+                return "instructor-login";
+            }
+
+            return "redirect:/instructors/" + account.getInstructor().getId();
+        } catch (RuntimeException e) {
+            model.addAttribute("errorMessage", "Incorrect email or password");
+            return "instructor-login";
+        }
+    }
+
     @GetMapping("/signup")
     public String showSignupPage(Model model) {
         model.addAttribute("instructor", new Instructor());
