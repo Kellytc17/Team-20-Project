@@ -23,6 +23,10 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
+    public List<Course> getCoursesByInstructor(Long instructorid) {
+        return courseRepository.findByInstructor_Id(instructorid);
+    }
+
     public Course getCourseById(Long id) {
         return courseRepository.findById(id)
                 .orElseThrow(() ->
