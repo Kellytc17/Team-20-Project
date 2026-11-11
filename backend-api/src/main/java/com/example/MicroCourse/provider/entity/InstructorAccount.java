@@ -1,6 +1,8 @@
 package com.example.MicroCourse.provider.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity 
 public class InstructorAccount {
@@ -9,11 +11,14 @@ public class InstructorAccount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Email is required")
+    @Email(message = "Enter a valid email address")
     @Column(nullable = false, unique = true)
     private String email;
 
+    @NotBlank(message = "Password is required")
     @Column(nullable = false)
-    private String passwordHash;
+    private String password;
 
     @OneToOne 
     @JoinColumn(name = "instructor_id", nullable = false)
@@ -34,12 +39,12 @@ public class InstructorAccount {
         this.email = email;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordHas(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Instructor getInstructor() {

@@ -14,21 +14,29 @@
             <div class="card shadow p-4">
 
                 <h2 class="text-center mb-4">Create Instructor Profile</h2>
-                <#if errors??>
-                    <#list errors as error>
-                        <div class="alert alert-danger">
-                            ${error.defaultMessage}
-                        </div>
-                    </#list>    
-                </#if>
-
                 <#if successMessage??>
                     <div class="alert alert-success">
                         ${successMessage}
                     </div>
                 </#if>
 
+                <#if errorMessage??>
+                    <div class="alert alert-danger">
+                        ${errorMessage}
+                    </div>
+                </#if>
+
                 <form action="/instructors/signup" method="post">
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
 
                     <div class="mb-3">
                         <label class="form-label">Full Name</label>
@@ -51,7 +59,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">
-                        Create Profile
+                        Create Instructor Account
                     </button>
 
                 </form>
