@@ -35,10 +35,11 @@ public class CoursePageController {
     @PostMapping 
     public String publishCourse(@PathVariable Long instructorId, @ModelAttribute Course course, RedirectAttributes redirectAttributes) {
         Instructor instructor = instructorService.getInstructorById(instructorId);
+        course.setInstructor(instructor);
         courseService.createCourse(course);
         redirectAttributes.addFlashAttribute("successMessage", "Course published successfully");
         
-        return "redirect:/instructor/" + instructorId + "/courses";
+        return "redirect:/instructors/" + instructorId + "/courses";
     }
 
     @GetMapping 

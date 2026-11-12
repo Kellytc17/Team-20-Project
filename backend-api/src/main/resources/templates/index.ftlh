@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MicroCourse</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2563EB;">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">MicroCourse</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/courses">Browse Courses</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/instructors">Instructors</a>
+                </li>
+            </ul>
+
+            <div class="d-flex gap-2">
+                <a href="/instructors/login" class="btn btn-outline-light">
+                    Instructor Login
+                </a>
+
+                <a href="/instructors/signup" class="btn btn-outline-light">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+                <h1 class="display-4 fw-bold">
+                    Expand Your Knowledge.
+                </h1>
+
+                <p class="lead mt-3">
+                    MicroCourse helps students learn through
+                    short, focused courses created by instructors.
+                </p>
+
+                <p class="text-muted">
+                    Explore bite-sized lessons, track your progress,
+                    and discover courses that match your interests.
+                </p>
+
+                <div class="mt-4">
+                    <a href="/courses" class="btn btn-primary btn-lg me-2">
+                        Browse Courses
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h2 class="fw-bold">MicroCourse</h2>
+
+                        <p class="text-muted">
+                            Bite-sized learning made simple.
+                        </p>
+
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-W48Vh_a_wC6ZRwjGzxfHKWY2-kmH2WElT4QazWUXiw&s=10"
+                            alt="Learning illustration"
+                            class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Choose MicroCourse?</h2>
+
+            <p class="text-muted">
+                Learn at your own pace with simple and focused courses.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-primary">
+                    <div class="card-body text-center p-4">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn6K9IOlSNdnS5iBaDGlBUjC2Kt0TyuIwr9J5UA681Fg&s=10T"
+                            alt="Bite-sized learning"
+                            class="img-fluid rounded mb-3">
+
+                        <h5 class="card-title fw-bold">Bite-Sized Learning</h5>
+
+                        <p class="card-text text-muted">
+                            Learn through short lessons that are easy
+                            to understand and complete.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-primary">
+                    <div class="card-body text-center p-4">
+                        <img
+                            src="https://cdn2.hubspot.net/hubfs/2929749/Imported_Blog_Media/5-star-reviews-tradies-2.png"
+                            alt="Reviews and ratings"
+                            class="img-fluid rounded mb-3">
+
+                        <h5 class="card-title fw-bold">Reviews and Ratings</h5>
+
+                        <p class="card-text text-muted">
+                            Read feedback from other learners before
+                            choosing a course.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-primary">
+                    <div class="card-body text-center p-4">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI3ANWCU3ufCyvFwHAbZXDPycbrl299_bfV7FUYoVztQ&s=10"
+                            alt="Track your progress"
+                            class="img-fluid rounded mb-3">
+
+                        <h5 class="card-title fw-bold">Track Your Progress</h5>
+
+                        <p class="card-text text-muted">
+                            Keep track of completed lessons and your
+                            progress toward finishing a course.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-primary">
+                    <div class="card-body text-center p-4">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUf-Uh2plDHtr2NhI0F-T4GmCljUaOwhbpVTijmhQ4Q&s=10"
+                            alt="Learner cohorts"
+                            class="img-fluid rounded mb-3">
+
+                        <h5 class="card-title fw-bold">Learner Cohorts</h5>
+
+                        <p class="card-text text-muted">
+                            Organize learners into groups and manage
+                            their course participation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Featured Courses</h2>
+
+            <p class="text-muted">
+                Explore our popular micro-courses and learn for free.
+            </p>
+
+            <p class="fw-bold">
+                Courses are free to access, while certificates are available for purchase.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+
+                        <span class="badge text-bg-primary mb-2 align-self-start">
+                            Technology
+                        </span>
+
+                        <h5 class="card-title fw-bold">
+                            Introduction to Python
+                        </h5>
+
+                        <p class="card-text text-muted">
+                            Learn the basics of Python programming
+                            through short and focused lessons.
+                        </p>
+
+                        <div class="mt-auto">
+                            <p class="fw-bold text-success mb-1">Free Course</p>
+                            <p class="text-muted mb-3">Certificate: $129.99</p>
+
+                            <a href="/courses" class="btn btn-outline-primary">
+                                View Courses
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+
+                        <span class="badge text-bg-success mb-2 align-self-start">
+                            Business
+                        </span>
+
+                        <h5 class="card-title fw-bold">
+                            Introduction to Marketing
+                        </h5>
+
+                        <p class="card-text text-muted">
+                            Learn basic marketing concepts and
+                            strategies through bite-sized lessons.
+                        </p>
+
+                        <div class="mt-auto">
+                            <p class="fw-bold text-success mb-1">Free Course</p>
+                            <p class="text-muted mb-3">Certificate: $99.99</p>
+
+                            <a href="/courses" class="btn btn-outline-primary">
+                                View Courses
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+
+                        <span class="badge text-bg-warning mb-2 align-self-start">
+                            Personal Development
+                        </span>
+
+                        <h5 class="card-title fw-bold">Study Skills 101</h5>
+
+                        <p class="card-text text-muted">
+                            Build better study habits and improve
+                            your learning skills.
+                        </p>
+
+                        <div class="mt-auto">
+                            <p class="fw-bold text-success mb-1">Free Course</p>
+                            <p class="text-muted mb-3">Certificate: $00.00</p>
+
+                            <a href="/courses" class="btn btn-outline-primary">
+                                View Courses
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+                <h2 class="fw-bold">Learn From Instructors</h2>
+
+                <p class="text-muted">
+                    Discover courses created by instructors who
+                    share their knowledge and expertise.
+                </p>
+
+                <a href="/instructors" class="btn btn-primary">
+                    Explore Instructors
+                </a>
+            </div>
+
+            <div class="col-lg-4 text-center mt-4 mt-lg-0">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+
+                        <h4 class="fw-bold">Become an Instructor</h4>
+
+                        <p class="text-muted">
+                            Create courses and share your knowledge
+                            with learners.
+                        </p>
+
+                        <a href="/instructors/signup"
+                           class="btn btn-outline-primary">
+                            Become an Instructor
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+
+                        <h4 class="fw-bold">Start Learning</h4>
+
+                        <p class="text-muted">
+                            Browse courses, track your progress,
+                            and build your skills at your own pace.
+                        </p>
+
+                        <a href="/courses" class="btn btn-outline-primary">
+                            Browse Courses
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <h2 class="fw-bold">Learn at Your Own Pace</h2>
+
+                <p class="text-muted">
+                    Explore bite-sized courses, discover new topics,
+                    and keep track of your learning progress.
+                </p>
+
+                <a href="/courses" class="btn btn-primary">
+                    Explore Courses
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="py-4 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <h5 class="fw-bold">MicroCourse</h5>
+
+                <p class="text-white-50">
+                    Bite-sized learning made simple for everyone.
+                </p>
+            </div>
+
+            <div class="col-md-6 text-md-end">
+                <a href="/" class="text-white text-decoration-none me-3">
+                    Home
+                </a>
+
+                <a href="/instructors" class="text-white text-decoration-none me-3">
+                    Instructors
+                </a>
+
+                <a href="/courses" class="text-white text-decoration-none">
+                    Courses
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="text-center text-white-50 mb-0">
+            &copy; 2026 MicroCourse. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

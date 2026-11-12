@@ -33,7 +33,7 @@
 
                             <p>
                                 <strong>Instructor:</strong>
-                                ${course.instructor.name}
+                                ${(course.instructor.name)!'Instructor not specified'}
                             </p>
                         </div>
                     </div>

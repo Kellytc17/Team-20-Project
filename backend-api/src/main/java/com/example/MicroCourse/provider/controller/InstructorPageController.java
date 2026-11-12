@@ -72,6 +72,12 @@ public class InstructorPageController {
         
     }
 
+    @GetMapping
+    public String showAllInstructors(Model model) {
+        model.addAttribute("instructors", instructorService.getAllInstructors());
+        return "instructors";
+    }
+
     @GetMapping("/{id}")
     public String showInstructorProfile(
         @org.springframework.web.bind.annotation.PathVariable Long id,
@@ -81,7 +87,8 @@ public class InstructorPageController {
     model.addAttribute("instructor", instructor);
 
     return "instructor-profile";
-}
+    
+    }
 
     
 }

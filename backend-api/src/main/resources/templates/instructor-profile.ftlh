@@ -24,6 +24,17 @@
 
         <p><strong>Profile Description:</strong> ${instructor.profileDescription!"Not provided"}</p>
 
+        <a herf="/instructors/${instructor.id}/courses/new"
+           class="btn btn-success me-2">
+           Publish a Course
+        </a>
+
+        <a herf="/instructors/${instructor.id}/courses"
+           class="btn btn-primary me-2">
+           View My Courses
+        </a>
+            
+
         <a href="/instructors/signup" class="btn btn-primary">Create Another Profile</a>
     </div>
 </div>

@@ -13,9 +13,14 @@ public class CourseBrowseController {
     }
 
     @GetMapping("/courses")
-    public String shwoAllCourses(Model model) {
+    public String showAllCourses(Model model) {
         model.addAttribute("courses", courseService.getAllCourses());
         return "courses";
+    }
+
+    @GetMapping 
+    public String showHomePage() {
+        return "index";
     }
 
 
