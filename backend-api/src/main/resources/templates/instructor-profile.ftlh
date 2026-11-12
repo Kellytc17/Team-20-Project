@@ -33,6 +33,16 @@
            class="btn btn-primary me-2">
            View My Courses
         </a>
+
+        <form action="/instructors/${instructor.id}/delete"
+              method="post"
+              onsubmit="return confirm('Are you sure you want to delete this instructor?');">
+
+              <button type="submit" class="btn btn-danger">
+                    Delete Profile
+              </button>
+        </form>
+        
             
 
         <a href="/instructors/signup" class="btn btn-primary">Create Another Profile</a>

@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface InstructorAccountRepository extends JpaRepository<InstructorAccount, Long> {
     Optional<InstructorAccount> findByEmail(String email);
     boolean existsByEmail(String email);
+    void deleteByInstructor_Id(Long instructorId);
 }
