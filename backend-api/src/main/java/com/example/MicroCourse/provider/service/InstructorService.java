@@ -2,6 +2,8 @@ package com.example.MicroCourse.provider.service;
 
 import com.example.MicroCourse.provider.entity.Instructor;
 import com.example.MicroCourse.provider.repository.InstructorRepository;
+import com.example.MicroCourse.provider.repository.InstructorAccountRepository;
+import com.example.MicroCourse.provider.repository.CourseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,9 +12,13 @@ import java.util.List;
 public class InstructorService {
 
     private final InstructorRepository instructorRepository;
+    private final InstructorAccountRepository accountRepository;
+    private final CourseRepository courseRepository;
 
-    public InstructorService(InstructorRepository instructorRepository) {
+    public InstructorService(InstructorRepository instructorRepository, InstructorAccountRepository accountRepository, CourseRepository courseRepository) {
         this.instructorRepository = instructorRepository;
+        this.accountRepository = accountRepository;
+        this.courseRepository = courseRepository;
     }
 
     public Instructor createInstructor(Instructor instructor) {
@@ -42,6 +48,8 @@ public class InstructorService {
 
     public void deleteInstructor(Long id) {
         Instructor instructor = getInstructorById(id);
+        accountRepository.deleteByInstructor_Id(id);
+        courseRepository.deleteByInstructor_Id(id);
         instructorRepository.delete(instructor);
     }
 }
