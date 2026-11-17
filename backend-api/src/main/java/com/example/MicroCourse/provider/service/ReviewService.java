@@ -62,7 +62,7 @@ public class ReviewService {
     }
 
     public List<Review> getReviewsByCustomer(Long customerId) {
-        return reviewRepository.findByCustomerId(customerId);
+        return reviewRepository.findByCustomer_Id(customerId);
     }
 
     public Review updateReview(Long id, Review updatedReview) {

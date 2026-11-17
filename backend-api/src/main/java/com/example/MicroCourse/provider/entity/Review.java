@@ -1,5 +1,7 @@
 package com.example.MicroCourse.provider.entity;
 
+import com.example.MicroCourse.customer.entity.Customer;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -18,9 +20,10 @@ public class Review {
 
     @Column(length = 2000)
     private String reply;
-
-    @Column(name = "customer_id", nullable = false)
-    private Long customerId;
+    
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "instructor_id", nullable = false)
@@ -30,11 +33,11 @@ public class Review {
     }
 
     public Review(Integer rating, String comment, String reply,
-                  Long customerId, Instructor instructor) {
+                  Customer customer, Instructor instructor) {
         this.rating = rating;
         this.comment = comment;
         this.reply = reply;
-        this.customerId = customerId;
+        this.customer = customer;
         this.instructor = instructor;
     }
 
@@ -70,12 +73,12 @@ public class Review {
         this.reply = reply;
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Instructor getInstructor() {

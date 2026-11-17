@@ -13,7 +13,7 @@
 **Base URL:**
 
 - Local: `http://localhost:8080/api`
-- Production: 
+- Production: `https://team-20-project.onrender.com/api`
 
 ## Profile and discovery
 
